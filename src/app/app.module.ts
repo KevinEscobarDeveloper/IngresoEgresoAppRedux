@@ -4,6 +4,8 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 //Modulos
 import { AppRoutingModule } from './app-routing.module';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -15,6 +17,16 @@ import { DetalleComponent } from './ingreso-egreso/detalle/detalle.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { environment } from '../environments/environment.development';
+
+//firebase 
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat'; 
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
+
 
 @NgModule({
   declarations: [
@@ -31,7 +43,13 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [
     provideClientHydration()

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ingreso-egreso-app-443fa": {
+      "hosting": {
+        "ingresoegresoapp": [
+          "ingreso-egreso-app-443fa"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ingreso-egreso-app-443fa"
+  }
+}
