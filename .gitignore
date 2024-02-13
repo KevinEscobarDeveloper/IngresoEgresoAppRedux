@@ -47,4 +47,5 @@ Thumbs.db
 .runtimeconfig.json
 
 #variables de entorno
-/environments
+/src/environments
+src\environments

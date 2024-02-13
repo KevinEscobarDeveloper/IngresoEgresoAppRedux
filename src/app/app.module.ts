@@ -17,7 +17,7 @@ import { DetalleComponent } from './ingreso-egreso/detalle/detalle.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { environment } from '../environments/environment.development';
+import { environment } from '../environments/environment.development'; 
 
 //firebase 
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
